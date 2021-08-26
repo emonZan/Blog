@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JS debounce example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <input type="text" id="search-input" />
+    <p>event fired times:<span id="fired-times"></span></p>
+    <p>debounce founcion execute times:<span id="debounce-times"></span></p>
+  </body>
+</html>
+<script>
+  const handleUserInput = function () {
+    var firedTimesDom = document.getElementById("fired-times");
+    firedTimes = firedTimesDom.innerHTML || 0;
+    firedTimes = +firedTimes + 1;
+    firedTimesDom.innerHTML = firedTimes;
+
+  };
+  const debounceFun = function (callback, delay) {
+    if (debounceTimer) {
+      clearTimeout(debounceTimer);
+    } else {
+      var debounceTimer = setTimeout(() => {
+        var debounceTimesDom = document.getElementById("debounce-times");
+        debounceTimesDom.innerHTML = 1;
+      }, 100);
+    }
+  };
+  const callSearchApi = function() {
+    
+  }
+  const inputBox = document.getElementById("search-input");
+
+  inputBox.addEventListener("input", handleUserInput);
+</script>
