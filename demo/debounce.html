@@ -8,32 +8,33 @@
   </head>
   <body>
     <input type="text" id="search-input" />
-    <p>event fired times:<span id="fired-times"></span></p>
-    <p>debounce founcion execute times:<span id="debounce-times"></span></p>
+    <p>input event fired times:<span id="fired-times"></span></p>
+    <p>
+      debounce search founcion execute times:<span id="debounce-times"></span>
+    </p>
   </body>
 </html>
 <script>
+  var timerId;
   const handleUserInput = function () {
     var firedTimesDom = document.getElementById("fired-times");
-    firedTimes = firedTimesDom.innerHTML || 0;
-    firedTimes = +firedTimes + 1;
-    firedTimesDom.innerHTML = firedTimes;
-
+    firedTimes = firedTimesDom.innerHTML || 0; // 获取初始fire times
+    firedTimesDom.innerHTML = parseInt(firedTimes) + 1; // fire times + 1
+    debounce(callSearchApi, 300);
   };
-  const debounceFun = function (callback, delay) {
-    if (debounceTimer) {
-      clearTimeout(debounceTimer);
-    } else {
-      var debounceTimer = setTimeout(() => {
-        var debounceTimesDom = document.getElementById("debounce-times");
-        debounceTimesDom.innerHTML = 1;
-      }, 100);
+
+  var debounce = function (callback, delay) {
+    if (timerId) {
+      clearTimeout(timerId); // 如果一直在请求，则不会调用
     }
+    timerId = setTimeout(callback, delay); // 等请求结束之后，delay一段时间再调用
   };
-  const callSearchApi = function() {
-    
-  }
-  const inputBox = document.getElementById("search-input");
 
-  inputBox.addEventListener("input", handleUserInput);
+  const callSearchApi = function () {
+    var debounceSearchTimesDom = document.getElementById("debounce-times");
+    debounceSearchTimes = debounceSearchTimesDom.innerHTML || 0; // 获取初始debounce search times
+    debounceSearchTimesDom.innerHTML = parseInt(debounceSearchTimes) + 1; // debounce search times + 1
+  };
+  const inputBox = document.getElementById("search-input");
+  inputBox.addEventListener("input", handleUserInput); // input添加监听事件
 </script>

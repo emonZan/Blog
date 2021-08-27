@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throttled function</title>
+  </head>
+  <body>
+    <div id="scroll-box"></div>
+    <p>resize event fired times:<span id="fired-times"></span></p>
+    <p>throttle founcion execute times:<span id="throttle-times"></span></p>
+  </body>
+</html>
+<script>
+  var previous = 0;
+  var timeId;
+  var throttle = function (callback, interval) {
+    var now = new Date();
+    if (now - previous > interval) {
+      callback();
+      previous = now;
+    }
+  };
+  // 另一种实现节流的方法
+  var throttle2 = function (callback, interval) {
+    if (timeId) {
+      return;
+    }
+    timeId = setInterval(() => {
+      callback();
+    }, interval);
+  };
+  handleResizeFun = function () {
+    var firedTimesDom = document.getElementById("fired-times");
+    firedTimes = firedTimesDom.innerHTML || 0; // 获取初始fire times
+    firedTimesDom.innerHTML = parseInt(firedTimes) + 1; // fire times + 1
+    // throttle(reArrangePage, 300);
+    throttle2(reArrangePage, 300);
+  };
+  const reArrangePage = function () {
+    var throttleTimesDom = document.getElementById("throttle-times");
+    throttleTimes = throttleTimesDom.innerHTML || 0; // throttle resize times
+    throttleTimesDom.innerHTML = parseInt(throttleTimes) + 1; // throttle resize times + 1
+  };
+  window.addEventListener("resize", handleResizeFun);
+</script>
