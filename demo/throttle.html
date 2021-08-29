@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Throttled function</title>
-  </head>
-  <body>
-    <div id="scroll-box"></div>
-    <p>resize event fired times:<span id="fired-times"></span></p>
-    <p>throttle founcion execute times:<span id="throttle-times"></span></p>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS throttled function</title>
+</head>
+
+<body>
+  <div id="scroll-box"></div>
+  <p>resize event fired times:<span id="fired-times"></span></p>
+  <p>throttle founcion execute times:<span id="throttle-times"></span></p>
+</body>
+
 </html>
 <script>
   var previous = 0;
@@ -18,19 +21,22 @@
   var throttle = function (callback, interval) {
     var now = new Date();
     if (now - previous > interval) // 等当前周期结束之后，再执行
-     {
+    {
       callback();
       previous = now;
     }
   };
   // 另一种实现节流的方法
   var throttle2 = function (callback, interval) {
+    // 如果已经设置了定时任务，那么什么都不需要做
     if (timeId) {
       return;
     }
+    // 在一段周期之后，再次设置定时任务
     timeId = setTimeout(() => {
       callback();
-      timeId = null;
+      // setTimeout定时方法完成后，把timeId设置为undefined
+      timeId = undefined;
     }, interval);
   };
   handleResizeFun = function () {
