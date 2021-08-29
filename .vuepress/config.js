@@ -4,19 +4,19 @@ module.exports = {
     themeConfig: {
         nav: [
             buildNav('CSS', [
-                buildNav('CSS', '/CSS/'),
+                buildNav('CSS', '/css/'),
             ]),
             buildNav('JS', [
-                buildNav('JS', '/JS/')
+                buildNav('JS', '/js/')
             ])
         ],
         sidebar: {
-            '/CSS/': [
+            '/css/': [
                 buildSidebar('CSS', [
                     'CSS实现垂直居中的8种方式'
                 ])
             ],
-            '/JS/': [
+            '/js/': [
                 buildSidebar('JS', [
                     'JS节流函数和防抖函数',
                 ])

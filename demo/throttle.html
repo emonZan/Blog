@@ -17,7 +17,8 @@
   var timeId;
   var throttle = function (callback, interval) {
     var now = new Date();
-    if (now - previous > interval) {
+    if (now - previous > interval) // 等当前周期结束之后，再执行
+     {
       callback();
       previous = now;
     }
@@ -27,8 +28,9 @@
     if (timeId) {
       return;
     }
-    timeId = setInterval(() => {
+    timeId = setTimeout(() => {
       callback();
+      timeId = null;
     }, interval);
   };
   handleResizeFun = function () {
