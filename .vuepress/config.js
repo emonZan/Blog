@@ -3,17 +3,14 @@ module.exports = {
     description: 'EmonWorld',
     themeConfig: {
         nav: [
-            buildNav('CSS', [
-                buildNav('CSS', '/css/'),
-            ]),
-            buildNav('JS', [
-                buildNav('JS', '/js/')
-            ])
+            buildNav('CSS', '/css/'),
+            buildNav('JS', '/js/')
         ],
         sidebar: {
             '/css/': [
                 buildSidebar('CSS', [
-                    'CSS实现垂直居中的8种方式'
+                    'CSS实现垂直居中的8种方式',
+                    'px, em, rem的区别和使用场景'
                 ])
             ],
             '/js/': [
