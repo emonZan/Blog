@@ -10,7 +10,7 @@ module.exports = {
             '/css/': [
                 buildSidebar('CSS', [
                     'CSS实现垂直居中的8种方式',
-                    'px, em, rem的区别和使用场景'
+                    'px,em,rem的区别和使用场景'
                 ])
             ],
             '/js/': [
