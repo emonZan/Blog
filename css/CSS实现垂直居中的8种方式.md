@@ -1,5 +1,6 @@
 # CSS 实现垂直居中的 5 种方式
 
+初始代码：
 ```javascript
 <div class="container">
   <div class="content"></div>
@@ -15,6 +16,9 @@
   width: 10rem;
 }
 ```
+最终效果：
+![css-center](../images/css-center.png)
+
 
 1. 用`margin: auto`的方法
 
