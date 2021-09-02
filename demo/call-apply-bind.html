@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>call apply bind function</title>
+  </head>
+  <body>
+    <button id="call-button">call Fun</button>
+    <button id="apply-button">apply Fun</button>
+  </body>
+</html>
+<script>
+  const name = "Jerry";
+
+  const me = {
+    name: "Emon",
+  };
+
+  function introduce(habbit1, habbit2) {
+    console.log(`My name is ${this.name}, I like ${habbit1}, ${habbit2}`);
+  }
+
+  const callButtonDom = document.getElementById("call-button");
+  callButtonDom.addEventListener("click", callIntroduce);
+
+  const applyButtonDom = document.getElementById("apply-button");
+  applyButtonDom.addEventListener("click", applyIntroduce);
+
+  function callIntroduce() {
+    introduce.call(me, "coding", "sleeping");
+  }
+  function applyIntroduce() {
+    introduce.apply(me, ["coding", "sleeping"]);
+  }
+  
+</script>
