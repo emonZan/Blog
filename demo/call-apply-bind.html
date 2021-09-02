@@ -9,6 +9,7 @@
   <body>
     <button id="call-button">call Fun</button>
     <button id="apply-button">apply Fun</button>
+    <button id="bind-button">bind Fun</button>
   </body>
 </html>
 <script>
@@ -22,17 +23,26 @@
     console.log(`My name is ${this.name}, I like ${habbit1}, ${habbit2}`);
   }
 
+  //调用 call fun
   const callButtonDom = document.getElementById("call-button");
   callButtonDom.addEventListener("click", callIntroduce);
-
+  // 调用 apply fun
   const applyButtonDom = document.getElementById("apply-button");
   applyButtonDom.addEventListener("click", applyIntroduce);
-
-  function callIntroduce() {
-    introduce.call(me, "coding", "sleeping");
-  }
-  function applyIntroduce() {
-    introduce.apply(me, ["coding", "sleeping"]);
-  }
+  // 调用bind fun
+  const bindButtonDom = document.getElementById("bind-button");
+  bindButtonDom.addEventListener(
+    "click",
+    introduce.bind(me, "bind function", "sleeping") // bind方法本身就return一个绑定好this的方法
+  );
   
+  //  call function
+  function callIntroduce() {
+    introduce.call(me, "call function", "sleeping");
+  }
+
+  // apply function
+  function applyIntroduce() {
+    introduce.apply(me, ["apply funcion", "sleeping"]);
+  }
 </script>
