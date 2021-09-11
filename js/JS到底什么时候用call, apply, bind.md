@@ -1,4 +1,4 @@
-# JS 到底什么时候用 call, apply, bind
+# 理解JS中的 call, apply, bind方法
 
 ## call, apply, bind 方法的目的和区别
 
@@ -61,13 +61,12 @@ introduce.apply(me, ["coding", "sleeping"]); //My name is Emon, I like coding, s
 4. bind 方法
 
 bind()和 call()在传参上面一样。但区别是：call()是返回函数调用的结果，而 bind()是返回一个绑定好 this 的函数。
+我常用bind方法的时候就是在
+ <button id="bind-button">bind Fun</button>
+  const bindButtonDom = document.getElementById("bind-button");
+  bindButtonDom.addEventListener(
+    "click",
+    introduce.bind(me, "bind function", "sleeping") // bind方法本身就return一个绑定好this的方法
+  );
 
-### 模拟 call 方法
 
-我们可以通过自己模拟 call 方法来进一步深入了解它的原理。
-
-### 模拟 apply 方法
-
-### 模拟 bind 方法
-
-function bind()

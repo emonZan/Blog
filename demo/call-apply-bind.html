@@ -23,13 +23,13 @@
     console.log(`My name is ${this.name}, I like ${habbit1}, ${habbit2}`);
   }
 
-  //调用 call fun
+  //调用 call function
   const callButtonDom = document.getElementById("call-button");
   callButtonDom.addEventListener("click", callIntroduce);
-  // 调用 apply fun
+  // 调用 apply function
   const applyButtonDom = document.getElementById("apply-button");
   applyButtonDom.addEventListener("click", applyIntroduce);
-  // 调用bind fun
+  // 调用bind function
   const bindButtonDom = document.getElementById("bind-button");
   bindButtonDom.addEventListener(
     "click",
@@ -45,4 +45,6 @@
   function applyIntroduce() {
     introduce.apply(me, ["apply funcion", "sleeping"]);
   }
+
+
 </script>
