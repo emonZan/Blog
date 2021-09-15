@@ -16,6 +16,7 @@ module.exports = {
             '/js/': [
                 buildSidebar('JS', [
                     'JS节流函数和防抖函数',
+                    '理解JS中的call, apply, bind方法'
                 ])
             ]
         },
