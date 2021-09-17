@@ -62,11 +62,12 @@ introduce.apply(me, ["coding", "sleeping"]); //My name is Emon, I like coding, s
 
 bind()和 call()在传参上面一样。但区别是：call()是返回函数调用的结果，而 bind()是返回一个绑定好 this 的函数。
 我常用bind方法的时候就是在
+
+```html
  <button id="bind-button">bind Fun</button>
   const bindButtonDom = document.getElementById("bind-button");
   bindButtonDom.addEventListener(
     "click",
     introduce.bind(me, "bind function", "sleeping") // bind方法本身就return一个绑定好this的方法
   );
-
-
+```

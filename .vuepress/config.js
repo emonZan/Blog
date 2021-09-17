@@ -18,6 +18,11 @@ module.exports = {
                     'JS节流函数和防抖函数',
                     '理解JS中的call, apply, bind方法'
                 ])
+            ],
+            '/framework/': [
+                buildSidebar('framework', [
+                    'kamra遇到chrome have not captured in 60000 ms killing的问题'
+                ])
             ]
         },
         lastUpdated: 'Last Updated',
