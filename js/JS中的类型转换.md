@@ -5,15 +5,15 @@ JavaScript中的基本数据类型分为**原始类型(Primitive values)**和**�
 
 ### 原始类型(Primitive values)
 + Boolean type
-+ Null Type
-+ Undefined Type
-+ Number Type
-+ BigInt Type (ECMAScript 2020 新增)
++ Null type
++ Undefined type
++ Number type
++ BigInt type (ECMAScript 2020 新增)
 + String type
-+ Symbol Type(ECMAScript 2015 新增)
++ Symbol type(ECMAScript 2015 新增)
 
 ### 对象类型(Objects)
-简单可以理解为：new Object，new Array，new Map，new Set，new WeakMap，new WeakSet，new Date，和几乎所有通过 new keyword 创建的东西。
+简单可以理解为：`new Object`，`new Array`，`new Map`，`new Set`，`new WeakMap`，`new WeakSet`，`new Date`，和几乎所有通过 new `keyword` 创建的东西。
 
 ### Typeof 操作符
 typeof操作符的目的就是检查数据类型。但是对于从Object派生出的结构类型。
