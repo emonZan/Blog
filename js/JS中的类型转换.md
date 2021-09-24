@@ -16,7 +16,7 @@ JavaScript 中的一共有 8 中内置类型。分为**原始类型(Primitive va
 
 ### 对象类型(Objects)
 
-简单可以理解为：`new Object`，`new Array`，`new Map`，`new Set`，`new WeakMap`，`new WeakSet`，`new Date`，和几乎所有通过 new `keyword` 创建的东西。
+简单可以理解为：` new Object`，` new Array`，` new Map`，` new Set`，` new WeakMap`，` new WeakSet`，` new Date`，和几乎所有通过 new `keyword` 创建的东西。
 
 ### Typeof 操作符
 
