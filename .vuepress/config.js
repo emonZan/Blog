@@ -4,12 +4,15 @@ module.exports = {
     themeConfig: {
         nav: [
             buildNav('CSS', '/css/'),
-            buildNav('JS', '/js/')
+            buildNav('JS', '/js/'),
+            buildNav('Framework', '/framework/'),
+            buildNav('Others', '/others/')
         ],
         sidebar: {
             '/css/': [
                 buildSidebar('CSS', [
                     'CSS实现垂直居中的8种方式',
+                    '怎么通过CSS画正三角和倒三角',
                     'px,em,rem的区别和使用场景'
                 ])
             ],
@@ -21,8 +24,14 @@ module.exports = {
                 ])
             ],
             '/framework/': [
-                buildSidebar('framework', [
-                    'kamra遇到chrome have not captured in 60000 ms killing的问题'
+                buildSidebar('Framework', [
+                    'kamra遇到chrome have not captured in 60000 ms killing的问题',
+                    'JS 实现Angular slider组件'
+                ])
+            ],
+            '/others/': [
+                buildSidebar('Others', [
+                    '开发实用工具'
                 ])
             ]
         },
