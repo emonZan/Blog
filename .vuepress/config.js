@@ -20,13 +20,13 @@ module.exports = {
                 buildSidebar('JS', [
                     'JS节流函数和防抖函数',
                     'JS中的类型转换',
-                    '理解JS中的call, apply, bind方法'
+                    '理解JS中的call,apply,bind方法'
                 ])
             ],
             '/framework/': [
                 buildSidebar('Framework', [
-                    'kamra遇到chrome have not captured in 60000 ms killing的问题',
-                    'JS 实现Angular slider组件'
+                    'kamra遇到chrome升级的问题',
+                    'JS实现Angular的slider组件'
                 ])
             ],
             '/others/': [
