@@ -8,28 +8,68 @@
   </head>
   <body>
     <div class="column-container">
-      <div class="center-column">center</div>
-      <div class="left-column">left</div>
-      <div class="right-column">right</div>
+      <div class="column left">left</div>
+      <div class="column right">right</div>
+      <div class="column center">center</div>
     </div>
   </body>
 </html>
 <style>
   .column-container > * {
     height: 200px;
-    background-color: lightslategrey;
     text-align: center;
   }
-  .column-container {
-      display: flex;
+  .left {
+    background-color: #a7d7c5;
   }
-  .center-column {
+  .center {
+    background-color: #74b49b;
+  }
+  .right {
+    background-color: #5c8d89;
+  }
+
+  /* grid  */
+  /* .column-container {
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    column-gap: 10px;
+  } */
+
+  /* flex */
+  /* .column-container {
+    display: flex;
+    column-gap: 10px;
+  }
+  .left,
+  .right {
+    width: 200px;
+  }
+  .center {
+    flex: 1;
+  } */
+
+  /* .left {
+    order: 0;
+  }
+  .center {
+    order: 1;
+  }
+  .right {
     order: 2;
+  } */
+
+  /* float */
+
+  .left {
+    width: 200px;
+    float: left;
   }
-  .left-column {
-      order: 1;
+  .right {
+    width: 200px;
+    float: right;
   }
-  .right-column {
-      order: 3;
+  .center {
+    width: 100%;
   }
 </style>

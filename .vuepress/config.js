@@ -13,7 +13,8 @@ module.exports = {
                 buildSidebar('CSS', [
                     'CSS实现垂直居中的8种方式',
                     '怎么通过CSS画正三角和倒三角',
-                    'px,em,rem的区别和使用场景'
+                    'px,em,rem的区别和使用场景',
+                    'CSS实现三栏布局的3种方式'
                 ])
             ],
             '/js/': [
