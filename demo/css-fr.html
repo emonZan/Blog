@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS fr units</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="A">A</div>
+      <div class="B">B</div>
+      <div class="C">C</div>
+      <div class="D">D</div>
+    </div>
+  </body>
+</html>
+<style>
+  .grid-container {
+    height: 100px;
+    text-align: center;
+    display: grid;
+  }
+  .A {
+    background-color: #f9f8eb;
+  }
+  .B {
+    background-color: #a7d7c5;
+  }
+  .C {
+    background-color: #74b49b;
+  }
+  .D {
+    background-color: #5c8d89;
+  }
+
+  /* fr average leftover space */
+  /* .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+  } */
+
+  /* fr with other units */
+  .grid-container {
+    grid-template-columns: 50px 1fr 20% 50px;
+    column-gap: 10px;
+  }
+</style>
