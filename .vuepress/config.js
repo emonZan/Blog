@@ -22,7 +22,8 @@ module.exports = {
                 buildSidebar('JS', [
                     'JS节流函数和防抖函数',
                     'JS中的类型转换',
-                    '理解JS中的call,apply,bind方法'
+                    '理解JS中的call,apply,bind方法',
+                    'JavaScript中的BigInt类型'
                 ])
             ],
             '/framework/': [
