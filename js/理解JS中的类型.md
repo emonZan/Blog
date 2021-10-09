@@ -1,6 +1,6 @@
-# JavaScript 中的类型转换
+# 理解 JavaScript 中的类型
 
-## JavaScript 基本数据类型
+## JavaScript 内置类型
 
 JavaScript 中的一共有 8 中内置类型。分为**原始类型(Primitive values)**和**对象类型(objects)**
 

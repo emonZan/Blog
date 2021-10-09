@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JS copy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body></body>
+</html>
+<script>
+  let person = { name: "Emon", job: "developer" };
+
+  // shallow copy demo1
+  //   let shallowCopyPerson = person;
+
+  // shallow copy demo2
+  //   let shallowCopyPerson = Object.assign(person);
+
+  // shallow copy demo3
+  let shallowCopyPerson = {};
+  for (const key in person) {
+    shallowCopyPerson[key] = person[key];
+  }
+  
+  shallowCopyPerson.name = "lucy";
+  console.log(person); // {name: 'lucy', job: 'developer'}
+  console.log(shallowCopyPerson); // {name: 'lucy', job: 'developer'}
+
+  //   deep copy demo1
+//   let shallowCopyPerson = {};
+//   for (const key in person) {
+//     shallowCopyPerson[key] = person[key];
+//   }
+</script>
