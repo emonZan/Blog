@@ -23,7 +23,9 @@ module.exports = {
                     'JS节流函数和防抖函数',
                     'JS中的类型转换',
                     '理解JS中的call,apply,bind方法',
-                    'JS中的BigInt类型'
+                    'JS中的BigInt类型',
+                    'JS中的深拷贝和浅拷贝',
+                    'JS中的内存管理'
                 ])
             ],
             '/framework/': [

@@ -28,4 +28,69 @@ JavaScript 的数字格式也就决定了 JavaScript 能够安全表示的整数
 https://v8.dev/blog/bigint
 
 ## 如何使用
-1
+
+1. 直接在数字后面加一个`n`
+2. 调用`BigInt()`构造函数
+
+```javascript
+const bigInt = 9007199254740992n; //通过直接在数字后面加n
+const bigNumber = BigInt(9007199254740992); // 对十进制数字使用BigInt函数
+const bigString = BigInt("9007199254740992"); //对String类型的使用BigInt函数，先隐式转换为十进制的数字，再显式转换为BigIn类型
+const bigHex = BigInt(0x20000000000000); // 对十六进制数字使用BigInt函数
+const bigBin = BigInt(0b100000000000000000000000000000000000000000000000000000); //对二进制数字使用BigInt函数
+```
+
+以上这些运算生成的值都是`9007199254740992n`;
+
+## BigInt类型运算
+
+### 可用操作符
+
+BigInt 中可以运用如下操作符：
+
+| 符号 | 名称   |
+| ---- | ------ |
+| +    | 加法   |
+| \*   | 乘法   |
+| -    | 减法   |
+| %    | 求余   |
+| \*\* | 求幂   |
+| <<   | 左移位 |
+| >>   | 右移位 |
+
+1.  当 BigInt 使用`/`操作符时，带小数的运算会被取整。
+
+```javascript
+const expected = 4n / 2n; //2n
+const rounded = 5n / 2n; //2n, not 2.5n
+```
+
+2.  因为 BigInt 都是有符号的, `>>>` （无符号右移）不能用于 BigInt
+
+### 运算注意事项
+
+BigInt 类型虽然和 Number 很像，可以做各种数学运算，但是在运算过程中要注意两点:
+
+1.  BigInt 类型不能用 Math 对象中的方法。
+2.  不能和 Number 示例混合运算。因为 JavaScript 在处理不同类型的运算时，会把他们先转换为同一类型，而 BigInt 类型变量在被隐式转换为 Number 类型时，可能会丢失精度，或者直接报错。
+
+```javascript
+const number = 1;
+const bigInt = 9007199254740993n;
+number + bigInt; //  TypeError: Cannot mix BigInt and other types
+```
+
+### BigInt类型和其他类型比较
+
+BigInt 类型的比较和 JavaScript 中的其他类型比较一样，分为宽松相等和严格相等。
+
+```javascript
+const bigInt = 2n;
+const int = 2;
+const string = "2";
+bigInt == int; // true
+bigInt == string; // true
+
+bigInt === int; // false
+bigInt === string; //false
+```
