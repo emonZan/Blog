@@ -1,6 +1,7 @@
 # CSS 实现垂直居中的 8 种方式
 
-初始代码：
+## 需求描述
+假设我们有如下初始代码，要求实现`content`在`container`中是垂直居中的。
 ```javascript
 <div class="container">
   <div class="content"></div>
@@ -16,11 +17,11 @@
   width: 10rem;
 }
 ```
-最终效果：
+## 最终效果：
 ![css-center](../images/css-center.png)
 
 
-1. 用`margin: auto`的方法
+## 1.用`margin: auto`的方法
 
 原理：
 
@@ -50,7 +51,7 @@
 }
 ```
 
-2. 用`top: 50%;` 加上 `translateY(-50%)`
+## 2. 用`top: 50%;`+`translateY(-50%)`
 
 - 原理：
   这种方式实现起来比较简单，但是前提是不需要做别的`transform`改动。
@@ -71,7 +72,7 @@
 }
 ```
 
-3. `display: flex`加上`margin: auto`
+## 3. `display: flex`+`margin: auto`
 
 - 原理：
   flex 容器中默认存在两根轴：主轴和交叉轴。默认的主轴是水平轴。通过控制子元素对这两根轴的对齐方式。可以比较轻松地实现居中。
@@ -87,7 +88,7 @@
 }
 ```
 
-1. 通过设置 flex 容器的`justify-content`和`align-items`两个属性来实现
+## 4. 通过设置`flex`容器的`justify-content`和`align-items`两个属性来实现
 
 - 原理：
   flex 布局中的两个属性`justify-content`：定义了元素在主轴的对齐方式， `align-items`：定义了元素在交叉轴的对齐方式。
@@ -102,7 +103,7 @@
 }
 ```
 
-5. 通过设置 flex 中子元素的`align-self`属性
+## 5. 通过设置`flex`中子元素的`align-self`属性
 
 - 原理：
 
@@ -121,7 +122,7 @@
 }
 ```
 
-6. grid 布局+`margin:auto`
+## 6. `grid`布局+`margin:auto`
 
 - 原理
   grid 网格布局，将元素分为行和列，是一种二维布局。它常用于实现我们现在流行的瀑布流显示模式。
@@ -138,7 +139,7 @@
 }
 ```
 
-7. grid 布局，设置容器的`align-content`和`justify-items`
+## 7. `grid`布局，设置容器的`align-content`和`justify-items`
 
 - 原理
   `justify-content`属性设置整个内容区域在容器里面的水平位置，`align-content`属性设置整个内容在容器的垂直位置。
@@ -153,7 +154,7 @@
 }
 ```
 
-8. grid 布局，单独设置子元素的对齐方式
+## 8. `grid`布局中单独设置子元素的对齐方式
 
 - 代码实现
 
@@ -167,7 +168,7 @@
 }
 ```
 
-总结：
+## 总结：
 无论是垂直居中或者水平居中，要点是：
 
 - 先确认参照物，比如说`position:relative`的父元素,flex 容器或者 grid 容器，甚至还有我们这篇文章中没有提到的 table 布局

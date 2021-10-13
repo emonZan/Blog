@@ -28,43 +28,43 @@
 
 先声明如下一个引用类型对象`person`：
 
-    ```javascript
-    let person = { name: "Emon", job: "developer" };
+```javascript
+let person = { name: "Emon", job: "developer" };
+```
 
-    ```
     1. 直接赋值
 
-    ```javascript
-    let shallowCopyPerson = person;
-    ```
+```javascript
+let shallowCopyPerson = person;
+```
 
     2. Object.assign(target)
 
     `Object.assign(target, source1, source2...)`原本是将所有可枚举属性的值从一个或多个源对象分配到目标对象。返回目标对象。
     通常用法：
 
-    ```javascript
-    const targetObj = { a: 1, b: 2 };
-    const sourceObj = { c: 3, d: 4 };
-    Object.assign(targetObj, sourceObj); // {a: 1, b: 2, c: 3, d: 4}
-    console.log(targetObj); //{a: 1, b: 2, c: 3, d: 4}
-    ```
+```javascript
+const targetObj = { a: 1, b: 2 };
+const sourceObj = { c: 3, d: 4 };
+Object.assign(targetObj, sourceObj); // {a: 1, b: 2, c: 3, d: 4}
+console.log(targetObj); //{a: 1, b: 2, c: 3, d: 4}
+```
 
     这里我们可用用来复制对象：
 
-    ```javascript
-    let shallowCopyPerson = Object.assign(person);
-    ```
+```javascript
+let shallowCopyPerson = Object.assign(person);
+```
 
     1.  遍历赋值，这种方式虽然把对象进行了遍历，但是本质还是复制的是对象的引用。
 
 这几个的复制的结果都是复制的都是对指针的复制，因此改变`shallowCopyPerson`的属性后，原来对象`person`的属性也会随之改变，结果如下：
 
-        ```javascript
-        shallowCopyPerson.name = "lucy"; // 改变复制后的值
-        console.log(shallowCopyPerson); // {name: 'lucy', job: 'developer'} 复制对象发生改变。
-        console.log(person); // {name: 'lucy', job: 'developer'} 注意目标对象自身也会改变。
-        ```
+```javascript
+shallowCopyPerson.name = "lucy"; // 改变复制后的值
+console.log(shallowCopyPerson); // {name: 'lucy', job: 'developer'} 复制对象发生改变。
+console.log(person); // {name: 'lucy', job: 'developer'} 注意目标对象自身也会改变。
+```
 
 ## 深拷贝实现
 
@@ -72,10 +72,18 @@
 
 1. Object.assign({}, source);
    这个方法是和上面的浅拷贝实现稍有区别，他把 target 设置为空对象，在将 source 对象传进去，实现了复制
-   ```javascript
-   let deepCopyPerson = Object.assign({}, person);
-   ```
-2. JSON.parse/stringify
+
+```javascript
+let deepCopyPerson = Object.assign({}, person);
+```
+
+2. ...拓展运算符（spread operator）
+
+```javascript
+let deepCopyPerson = { ...person };
+```
+
+3. JSON.parse/stringify
    这个方法的限制比较多，如果你需要拷贝的对象中没有`functions`, `undefined`, `Infinit`或者像`RegExps`, `Maps`, `Sets`, `Blobs`, `FileLists`, `ImageDatas`等比较复杂的类型。那么可以用这个方法。
 
 ```javascript
@@ -87,6 +95,24 @@ const a = {
   date: new Date(), // stringified
   undef: undefined, // lost
   inf: Infinity, // forced to 'null'
-  re: /.*/, // lost
+  re: /.*/, // lost, to {}
+  fun: () => "hello world", // lost
 };
+```
+
+4. 遍历赋值
+   我们可以通过遍历原有对象，把里面的值一个一个重新赋值给新对象。
+
+```javascript
+let shallowCopyPerson = {};
+for (const key in person) {
+  shallowCopyPerson[key] = person[key];
+}
+```
+
+5. `structuredClone()`方法
+   这是 JS 官方定义的方法。不过遗憾的是，目前主流浏览器都不支持这个方法。可以参考[structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone)获取最新的浏览器支持结果。
+
+```javascript
+const shallowCopyPerson = structuredClone(person);
 ```

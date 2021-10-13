@@ -18,18 +18,18 @@
   //   let shallowCopyPerson = Object.assign(person);
 
   // shallow copy demo3
-  let shallowCopyPerson = {};
-  for (const key in person) {
-    shallowCopyPerson[key] = person[key];
-  }
-  
+  // let shallowCopyPerson = {};
+  // for (const key in person) {
+  //   shallowCopyPerson[key] = person[key];
+  // }
+
+  //   deep copy demo1
+  //   let shallowCopyPerson = {};
+  //   for (const key in person) {
+  //     shallowCopyPerson[key] = person[key];
+  //   }
+  let shallowCopyPerson = { ...person };
   shallowCopyPerson.name = "lucy";
   console.log(person); // {name: 'lucy', job: 'developer'}
   console.log(shallowCopyPerson); // {name: 'lucy', job: 'developer'}
-
-  //   deep copy demo1
-//   let shallowCopyPerson = {};
-//   for (const key in person) {
-//     shallowCopyPerson[key] = person[key];
-//   }
 </script>

@@ -1,4 +1,4 @@
-# CSS 怎么画正三角和倒三角形
+# CSS怎么画三角形
 
 ## 画三角形的原理
 
@@ -25,7 +25,7 @@ html 代码
 ## 正三角形
 
 要画一个正三角形，那么我们需要把 top, left, right 的这三个边都设置为透明
-
+![triangle](../images/triangle.png)
 代码实现：
 
 ```css

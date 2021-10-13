@@ -1,6 +1,7 @@
 # kamra 遇到 chrome have not captured in 60000 ms killing 的问题
 
-最近遇到了由于 Chrome 升级到 93. 导致我们在 team citys 上面跑`ng test`命令时， 会遇到如下报错， 而在本地确是好的：
+## 问题描述
+最近遇到了由于 Chrome 升级到 93。导致我们在 team citys 上面跑`ng test`命令时， 会遇到如下报错， 而在本地确是好的：
 ![chrome-timeout](../images/chrome-timeout.png)
 
 这个原因应该是因为 chrome 升级之后，原来装在`%LOCALAPPDATA%/Google/Chrome/Application`位置的 chrome 现在安装在`%PROGRAMFILES%/Google/Chrome/Application`.

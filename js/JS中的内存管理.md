@@ -1,6 +1,6 @@
 # JavaScript中的内存管理
 
-平时写JS代码时候，我们很少会考虑到内存管理（m）
+平时写JavaScript代码时候，我们很少会考虑到内存管理（Memory Management)的问题，因为JS
 
 ## JavaScript内存中的堆和栈
 栈（stack）：栈是JavaScript用来存储静态数据的数据结构。静态数据是引擎在编译时知道其大小的数据。在JavaScript中，这包括7种原始值(Primitive values)(string, number, boolean, bull, undefined, bigInt, symbol)和指向对象和函数的引用。

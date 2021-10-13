@@ -1,4 +1,4 @@
-# JavaScript 中的 BigInt 类型
+# JavaScript中的BigInt类型
 
 ## Number 的安全范围
 

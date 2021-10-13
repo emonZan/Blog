@@ -1,9 +1,11 @@
-# CSS 实现三栏布局的 3 种方式
+# CSS 实现三栏布局的3种方式
 
 ## 需求描述
 
-三栏布局在我们生活中很常见，一般要求的是两边宽度固定，中间自适应宽度。
-假设我们有如下`html`代码，要求实现三栏布局。
+三栏布局在我们生活中很常见，一般要求的是两边宽度固定，中间自适应宽度。比如说如下情况：
+![three-columns-demo](../images/three-columns-demo.png)
+
+现在让我们自己来实现，假设我们有如下`html`代码，要求实现三栏布局。
 
 ```html
 <div class="column-container">
@@ -17,7 +19,7 @@
 
 ![three-columns](../images/css-three-columns.png)
 
-最简单是方式是用 flex 或者 grid。他们被设计出来的目的就是应付这类场景的。
+最简单是方式是用 `flex` 或者 `grid`。他们被设计出来的目的就是应付这类场景的。
 
 ## 1. grid 实现
 
