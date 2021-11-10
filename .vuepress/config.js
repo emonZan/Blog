@@ -12,7 +12,7 @@ module.exports = {
             '/css/': [
                 buildSidebar('CSS', [
                     'CSS实现垂直居中的8种方式',
-                    '怎么通过CSS画正三角和倒三角',
+                    'CSS怎么画三角形',
                     'px,em,rem的区别和使用场景',
                     'CSS实现三栏布局的3种方式',
                     '介绍CSS中的长度单位fr'
@@ -21,7 +21,7 @@ module.exports = {
             '/js/': [
                 buildSidebar('JS', [
                     'JS节流函数和防抖函数',
-                    'JS中的类型转换',
+                    '理解JS中的类型',
                     '理解JS中的call,apply,bind方法',
                     'JS中的BigInt类型',
                     'JS中的深拷贝和浅拷贝',
@@ -32,6 +32,11 @@ module.exports = {
                 buildSidebar('Framework', [
                     'kamra遇到chrome升级的问题',
                     'JS实现Angular的slider组件'
+                ])
+            ],
+            '/network/': [
+                buildSidebar('Network', [
+                    'HTTP和HTTPS的区别'
                 ])
             ],
             '/others/': [
