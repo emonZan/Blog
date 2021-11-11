@@ -36,7 +36,7 @@ module.exports = {
             ],
             '/network/': [
                 buildSidebar('Network', [
-                    'HTTP和HTTPS的区别'
+                    '理解HTTP和HTTPS'
                 ])
             ],
             '/others/': [
