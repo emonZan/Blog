@@ -23,7 +23,7 @@
 3. 后进先出，存取速度相对于堆内存，更快。
 
 **堆内存(heap memory)：**
-栈是一个不同的存储数据的空间，JavaScript 在这里存储对象和函数。
+堆内存是一个不同的存储数据的空间，JavaScript 在这里存储对象和函数。
 
 特点：
 
@@ -60,12 +60,39 @@ var o = {
 
 ## 垃圾回收(Garbage collection)
 
+垃圾回收的算法主要是依赖于引用的概念。
+引用(Reference)： 在内存管理的环境中，一个对象如果有访问另一个对象的权限，叫做一个对象引用另一个对象。引用包括显示引用(explicitly reference)和隐式引用(implicitly reference)。
 
-## 内存泄漏
+```javascript
+function Employee(name, dept) {
+  this.name = name || "";
+  this.dept = dept || "general";
+}
+var emon = new Employee();
+```
+
+简而言之，自动垃圾回收就是把我们不再需要的内存释放掉。但是判断这个“对象是否不再需要”的状态，则是垃圾回收算法一直在考虑的问题。
+
+### 标记-清除算法（Mark-and-sweep algorithm）
+
+自从 2012 之后，所有现代浏览器都使用带了标记-清除垃圾回收算法。
+
+### 引用计数垃圾收集（Reference-counting garbage collection）
+
+这种方法把“对象是否不再需要”简化为“没有其他对象引用它”。如果一个对象是零引用，那么它将会被垃圾回收机制回收。
+
+但是这种算法在循环引用的时候不起作用。因此已经被废弃了。
+
+## 内存泄漏（memory leak）
+
+### 内存泄漏
 
 ### 解决办法
 
 ## 参考链接
 
 https://felixgerschau.com/javascript-memory-management/#memory-life-cycle
+
 https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#inheriting_properties
