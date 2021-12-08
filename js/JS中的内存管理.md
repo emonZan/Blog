@@ -61,9 +61,8 @@ var n = 12; // 给Number类型变量n分配栈内存
 var o = {
   name: "Emon",
   job: "developer",
-}; // 给对象类型变量o分配堆内存进次存储，并把对o的引用存储到栈内存中
+}; // 给对象类型变量o分配堆内存进行存储，并把对o的引用存储到栈内存中
 ```
-
 
 ## 垃圾回收(Garbage collection)
 
@@ -71,18 +70,17 @@ var o = {
 引用(Reference)： 在内存管理的环境中，一个对象如果有访问另一个对象的权限，叫做一个对象引用另一个对象。引用包括显示引用(explicitly reference)和隐式引用(implicitly reference)。
 
 ```javascript
-var emonObj = {name: 'emon', dept: 'web'}; // emonObj 对它的原型（prototype）有隐式引用
+var emonObj = { name: "emon", dept: "web" }; // emonObj 对它的原型（prototype）有隐式引用
 emonObj.name; // emonObj 对象对 name value有显示引用
 ```
 
-而垃圾回收器就是把我们不再需要的内存的时候，自动释放它。但是这只能是一个近似的过程，因为“某块内存是否仍然需要”的状态是无法判定（）的，也就是一个算法在有穷时间内无法给出“yes”或“no”答案。
+而垃圾回收器就是把我们不再需要的内存的时候，自动释放它。但是这只能是一个近似的过程，因为“某块内存是否仍然需要”的状态是无法判定（undecidable）的，也就是一个算法在有穷时间内无法给出“yes”或“no”答案。
 所以判断这个“是否不再需要”的状态，是垃圾回收算法一直在努力考虑和优化的问题。
 
 ### 标记-清除算法（Mark-and-sweep algorithm）
 
 自从 2012 之后，所有现代浏览器都使用带了标记-清除垃圾回收算法。它把“对象是否不再需要”简化为“对象是否可以获得”。
-它的原理是： 设置一个叫做根的对象（root）（JavaScript中指的是全局对象）。垃圾回收器将定期从root开始，找所有从root开始引用的对象，以及引用的引用...最终获得所有可以获得的对象和不能获得的对象，并把不能获得的对象所占用的内存给给释放掉。
-
+它的原理是： 设置一个叫做根的对象（root）（JavaScript 中指的是全局对象）。垃圾回收器将定期从 root 开始，找所有从 root 开始引用的对象，以及引用的引用...最终获得所有可以获得的对象和不能获得的对象，并把不能获得的对象所占用的内存给给释放掉。
 
 ![mark-and-sweep](../images/mark-and-sweep.gif)
 
@@ -90,23 +88,49 @@ emonObj.name; // emonObj 对象对 name value有显示引用
 
 ### 引用计数垃圾收集（Reference-counting garbage collection）
 
-这种方法把“对象是否不再需要”简化为“没有其他对象引用它”。如果一个对象是零引用，那么它将会被垃圾回收机制回收。
+这是一种最简单是垃圾回收算法，它方法把“对象是否不再需要”简化为“没有其他对象引用它”。如果一个对象是零引用，那么它将会被垃圾回收机制回收。
 
 但是这种算法在循环引用的时候不起作用。因此已经被废弃了。这里我们不做过多讨论。
 
 ## 内存泄漏（memory leak）
+
 内存泄漏是指：
+
 1. 计算机程序因为某些原因（对存储器配置配置管理失当，疏忽或者错误）造成程序没法是否已经不再使用的内存。
 2. 配置给对象的存储器无法被执行程序所访问。
-内存泄漏不是指内存在物理上的消失，而是应用程序分配某段内存之后，由于设计失误，导致在是否该段内存之前就失去了对该段内存的控制，造成内存的浪费。
-### 内存泄漏示例
+   内存泄漏不是指内存在物理上的消失，而是应用程序分配某段内存之后，由于设计失误，导致在是否该段内存之前就失去了对该段内存的控制，造成内存的浪费。
 
-### 解决办法
+我们这里会将 4 种常见的内存泄漏例子，你会发现，如果你理解了幕后发生的事情，这些都是可以轻易避免的。
 
-## 参考链接
+### 全局变量（Global variables）
 
-https://felixgerschau.com/javascript-memory-management/#memory-life-cycle
+    把数据存储在全局变量中可能是最常见的内存泄漏。
+    如果你用`var`关键字声明一个变量，直接定义一个`function`，或者直接忽略关键字的时候，浏览器引擎会自动把这个变量加到`window`对象里面。
 
-https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec
+```javascript
+function createPerson() {
+  // 以下三个变量，看似定义在createPerson方法里，实际存放在window对象里。如果这些数据足够大，则会影响到程序运行速率
+  var globalName = "Emon"; // 使用var关键字创建的变量
+  this.currentPerson = "me"; //使用this创建的变量，这里的this指向的是window
+  globalLastName = "Lu"; //未声明的变量
+}
+```
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#inheriting_properties
+#### 解决办法
+
+1. 尽量避免定义全局变量，可以通过使用`let`,`const`关键字来定义变量。
+2. 在严格模式下运行代码来避免这种情况。
+3. 在创建全局变量之后，确保在不使用它的时候释放掉，可以把它设置为`null`。
+
+### 忘记的定时器或者callback方法
+#### 忘记的定时器
+特别是针对于单页面应用。如果你使用`setU`
+
+
+## 参考文档
+
+[JavaScript's Memory Management Explained](https://felixgerschau.com/javascript-memory-management/#memory-life-cycle)
+
+[How JavaScript works: memory management + how to handle 4 common memory leaks](https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec)
+
+[Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
