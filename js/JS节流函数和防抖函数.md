@@ -1,6 +1,6 @@
 # JavaScript 实现节流函数，防抖函数
 
-1. 节流函数（throttling fountion）和防抖函数（debouncing fountion）都是为了实现一个目的：减少方法被调用的次数，提高网站效率。
+节流函数（throttling fountion）和防抖函数（debouncing fountion）都是为了实现一个目的：减少方法被调用的次数，提高网站效率。
    常用于处理一些会被频繁触发的事件， 比如说`keydown, keyup, click, mousemove, resize`等等。
 
 ## 节流函数（throttling founction）
@@ -45,7 +45,7 @@ var throttle2 = function (callback, interval) {
 ## 防抖函数（debouncing fountion）
 
 依旧是你在嗑瓜子，但是这次是你妈妈在帮你扫地，她告诉你，等你嗑完这一袋瓜子后叫她，她才会慢悠悠过来帮你扫掉。之前无论你叫她多少次，她听到了，但并不想理你。
-防抖函数就是会等事件结束之后，冷却一段下·x 时间，才会执行。
+防抖函数就是会等事件结束之后，冷却一段时间，才会执行。
 
 ### 示例
 

@@ -36,7 +36,8 @@ module.exports = {
             ],
             '/network/': [
                 buildSidebar('Network', [
-                    '理解HTTP和HTTPS'
+                    '理解HTTP和HTTPS',
+                    '详解域名'
                 ])
             ],
             '/others/': [
