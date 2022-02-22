@@ -4,6 +4,7 @@ module.exports = {
     themeConfig: {
         nav: [
             buildNav('CSS', '/css/'),
+            buildNav('HTML', '/html/'),
             buildNav('JS', '/js/'),
             buildNav('Framework', '/framework/'),
             buildNav('Others', '/others/')
@@ -16,6 +17,12 @@ module.exports = {
                     'px,em,rem的区别和使用场景',
                     'CSS实现三栏布局的3种方式',
                     '介绍CSS中的长度单位fr'
+                ])
+            ],
+            '/html/': [
+                buildSidebar('HTML', [
+                    '了解viewport-meta-tag'
+                    
                 ])
             ],
             '/js/': [
