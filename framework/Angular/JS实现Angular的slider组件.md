@@ -12,7 +12,7 @@
 
 ## Demo
 
-![slider-demo](../images/slider-component.gif)
+![slider-demo](../assets/images/slider-component.gif)
 
 ## 意外处理
 

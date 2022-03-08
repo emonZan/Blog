@@ -16,7 +16,7 @@
 **栈内存（stack memory：**
 栈是 JavaScript 用来存储静态数据的数据结构。静态数据是引擎在编译时知道其大小的数据。在 JavaScript 中，这包括 7 种原始值(Primitive values)(string, number, boolean, bull, undefined, bigInt, symbol)和指向对象和函数的引用。
 
-![stack](../images/stack.png)
+![stack](../assets/images/stack.png)
 
 特点：
 
@@ -27,7 +27,7 @@
 **堆内存(heap memory)：**
 堆内存是一个不同的存储数据的空间，JavaScript 在这里存储对象和函数。
 
-![heap](../images/heap.png)
+![heap](../assets/images/heap.png)
 
 特点：
 
@@ -48,7 +48,7 @@
 
 内存的生命周期和我们生活中使用工具的情况很像，都是拿，用，还这三个流程。
 
-![memory-life-cycle](../images/memory-life-cycle.png)
+![memory-life-cycle](../assets/images/memory-life-cycle.png)
 
 1.  按需分配内存（Allocate memory)
     分配内存发生在我们初始化一个变量的时候。
@@ -82,7 +82,7 @@ emonObj.name; // emonObj 对象对 name value有显示引用
 自从 2012 之后，所有现代浏览器都使用带了标记-清除垃圾回收算法。它把“对象是否不再需要”简化为“对象是否可以获得”。
 它的原理是： 设置一个叫做根的对象（root）（JavaScript 中指的是全局对象）。垃圾回收器将定期从 root 开始，找所有从 root 开始引用的对象，以及引用的引用...最终获得所有可以获得的对象和不能获得的对象，并把不能获得的对象所占用的内存给给释放掉。
 
-![mark-and-sweep](../images/mark-and-sweep.gif)
+![mark-and-sweep](../assets/images/mark-and-sweep.gif)
 
 当然，它也有个限制，那就是无法从根对象查询到的对象都会被清除。
 

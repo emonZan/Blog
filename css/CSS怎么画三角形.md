@@ -4,15 +4,15 @@
 
 我们画三角形是通过 border 这个样式来画的。平常的 border 在你们眼中可能是这样的
 
-![slim-border](../images/triangle-slim-border.png)
+![slim-border](../assets/images/triangle-slim-border.png)
 
 当我们把 border 宽度增加后，我们可以看到相邻的 border 直接是像我们平时常见的相框，窗框一样连接起来的。
 
-![blod-border](../images/triangle-blod-border.png)
+![blod-border](../assets/images/triangle-blod-border.png)
 
 那么，当我们内容的宽度设为 0 之后。就变成了这样，这个图会不会回想起小时候做的一道题“数数里面一共有多少个三角形”？
 
-![full-border](../images/triangle-full-border.png)
+![full-border](../assets/images/triangle-full-border.png)
 
 这时候，我们再去画三角形就简单了。只需要把你需要的三角形那个区域填充好颜色，再把别的部分都设置为透明就好。
 
@@ -25,7 +25,7 @@ html 代码
 ## 正三角形
 
 要画一个正三角形，那么我们需要把 top, left, right 的这三个边都设置为透明
-![triangle](../images/triangle.png)
+![triangle](../assets/images/triangle.png)
 代码实现：
 
 ```css
@@ -41,7 +41,7 @@ html 代码
 
 同理，把 bottom, left, right 这三个边设置为透明，top 填充为我们需要的颜色
 
-![slim-border](../images/inverted-triangle.png)
+![slim-border](../assets/images/inverted-triangle.png)
 
 ```css
 .triangle-box {
@@ -53,7 +53,7 @@ html 代码
 
 在画出三角形之后，我们还可以通过改变 border 的宽度，来实现不同高低的三角形。
 
-![short-triangle](../images/short-triangle.png)
+![short-triangle](../assets/images/short-triangle.png)
 
 代码实现：
 

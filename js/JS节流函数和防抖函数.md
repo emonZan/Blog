@@ -12,7 +12,7 @@
 
 实现监听窗口变化的功能
 
-![throttle-image](../images/throttle-demo.gif)
+![throttle-image](../assets/images/throttle-demo.gif)
 
 ### 代码实现
 
@@ -51,7 +51,7 @@ var throttle2 = function (callback, interval) {
 
 实现如下根据用户输入进行搜索的功能
 
-     ![debounce-image](../images/debounce-demo.gif)
+     ![debounce-image](../assets/images/debounce-demo.gif)
 
 ### 代码实现
 

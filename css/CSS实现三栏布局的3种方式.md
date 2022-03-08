@@ -3,7 +3,7 @@
 ## 需求描述
 
 三栏布局在我们生活中很常见，一般要求的是两边宽度固定，中间自适应宽度。比如说如下情况：
-![three-columns-demo](../images/three-columns-demo.png)
+![three-columns-demo](../assets/images/three-columns-demo.png)
 
 现在让我们自己来实现，假设我们有如下`html`代码，要求实现三栏布局。
 
@@ -17,7 +17,7 @@
 
 结果如下：
 
-![three-columns](../images/css-three-columns.png)
+![three-columns](../assets/images/css-three-columns.png)
 
 最简单是方式是用 `flex` 或者 `grid`。他们被设计出来的目的就是应付这类场景的。
 
@@ -83,7 +83,7 @@ flex 还有个很有意思的属性是`order`,假设 HTML 代码如下，需要�
 3. 在响应式这块适配比较查。
    
 不过我们也可以通过和之前的`flex,grid`两种方法进行对比，结果如下：
-![three-columns-float](../images/css-three-columns-float.png)
+![three-columns-float](../assets/images/css-three-columns-float.png)
 
 代码实现：
 

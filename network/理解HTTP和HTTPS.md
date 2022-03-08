@@ -68,7 +68,7 @@ HTTP/3 是即将到来的第三个主要版本的 HTTP 协议，和之前的 1.1
 
 **HTTPS(HTTP Secure)** 也叫“超文本传输安全协议”，但它不是应用层的一种新协议，而是经由 HTTP 进行通讯，但是在 HTTP 通信接口部分用 SSL/TLS 协议代替。简而言之，HTTPS 是在 HTTP 的基础上，加了 SSL/TSL 协议这层外壳， 也拥有了身份验证，加密，证书和完整性保护这些功能。
 
-![HTTP-HTTPS](../images/http-https.png)
+![HTTP-HTTPS](../assets/images/http-https.png)
 
 ## SSL/TSL 简介
 
@@ -110,7 +110,7 @@ SSL 协议在 1999 年 TLS 1.0 发布时就已被弃用，但仍然经常将这�
 SSL/TLS 使用非对称和对称加密来保护传输中的数据的机密性和完整性。非对称加密用于在客户端和服务器之间建立安全会话，对称加密用于在安全会话中交换数据。这样把两种加密方式的优点结合起来。实现了我们现在用的 HTTPS。
 
 
-![mixed-encryption](../images/mixed-encryption.png)
+![mixed-encryption](../assets/images/mixed-encryption.png)
 
 ### SSL 证书
 
@@ -121,7 +121,7 @@ SSL 证书（也称 TLS 或者 SSL/TLS 证书）是一种数字证书，它就�
 
 我们可以通过点击url头部的🔒的标志来查看证书。
 
-![google 证书](../images/certificate.png)
+![google 证书](../assets/images/certificate.png)
 
 ## 使用场景
 

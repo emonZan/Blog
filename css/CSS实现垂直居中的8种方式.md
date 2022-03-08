@@ -18,7 +18,7 @@
 }
 ```
 ## 最终效果：
-![css-center](../images/css-center.png)
+![css-center](../assets/images/css-center.png)
 
 
 ## 1.用`margin: auto`的方法

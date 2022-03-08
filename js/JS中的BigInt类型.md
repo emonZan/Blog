@@ -4,7 +4,7 @@
 
 和别的强类型编程语言(比如说 C，Java)不同，JavaScript 不区分整数值和浮点数值。
 我们可以发现`10 === 10.0 // true`。那是因为 JavaScript 的数字类型是基于 IEEE 754 标准中的"双精度"格式，也就是 64 位二进制来实现的，它是通过如下格式来存储数据。
-![ieee-754](../images/ieee-754.png)
+![ieee-754](../assets/images/ieee-754.png)
 
 符号位(Sign bit): 1 bit(0 表示正数， 1 表示负数)
 指数位(Exponent): 11 bits

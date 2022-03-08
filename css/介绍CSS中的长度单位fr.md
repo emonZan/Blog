@@ -34,7 +34,7 @@
 }
 ```
 
-![css-fr](../images/css-fr.png)
+![css-fr](../assets/images/css-fr.png)
 
 ### 2. 和其他单位混合使用
 
@@ -48,4 +48,4 @@
 }
 ```
 
-![css-fr-mix](../images/css-fr-mix.png)
+![css-fr-mix](../assets/images/css-fr-mix.png)
