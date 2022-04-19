@@ -56,7 +56,7 @@ console.log(targetObj); //{a: 1, b: 2, c: 3, d: 4}
 let shallowCopyPerson = Object.assign(person);
 ```
 
-    1.  遍历赋值，这种方式虽然把对象进行了遍历，但是本质还是复制的是对象的引用。
+    3.  遍历赋值，这种方式虽然把对象进行了遍历，但是本质还是复制的是对象的引用。
 
 这几个的复制的结果都是复制的都是对指针的复制，因此改变`shallowCopyPerson`的属性后，原来对象`person`的属性也会随之改变，结果如下：
 
