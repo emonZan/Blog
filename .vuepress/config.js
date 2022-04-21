@@ -49,7 +49,8 @@ module.exports = {
             ],
             '/others/': [
                 buildSidebar('Others', [
-                    '开发实用工具'
+                    '开发实用工具',
+                    'git常用命令总结'
                 ])
             ]
         },
