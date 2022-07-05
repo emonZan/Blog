@@ -14,22 +14,24 @@ viewport, 中文也叫“视口”。在浏览器范畴里，它代表的是在�
 
 ## 属性
 
-为了满足 visual viewport = layout viewport 的理想情况，就需要通过 meta 标签来配置 viewport 的不同属性来设计网页。
+为了满足 `visual viewport = layout viewport` 的理想情况，就需要通过 meta 标签来配置 viewport 的不同属性来设计网页。
 一般我们用 HTML5 模板生成一个 html 文件时，viewport 会初始化出下面这些属性：
 `<meta name="viewport" content="width=device-width, initial-scale=1">`
-`content="width=device-width`的意思是让 layout viewport 的宽度等于设备宽度。`initial-scale=1`的意思是允许用户对页面进行缩放。
+
+1. `content="width=device-width`的意思是让 layout viewport 的宽度等于设备宽度。
+2. `initial-scale=1`的意思是允许用户对页面进行缩放。
 
 ### viewport的6个属性
-1. width: 设置布局窗口的宽度。上面的例子里，我们将其设置为`device-width`。 同时，它也可以设置为指定的数字，`width=960`意思是宽度设置为`960px`。
-2. initial-scale: 设置页面的第一次加载时候的缩放和布局窗口的宽度。一般默认值是 1。
+1. `width`: 设置布局窗口的宽度。上面的例子里，我们将其设置为`device-width`。 同时，它也可以设置为指定的数字，`width=960`意思是宽度设置为`960px`。
+2. `initial-scale`: 设置页面的第一次加载时候的缩放和布局窗口的宽度。一般默认值是 1。
 
-3. minimum-scale: 设置最小缩放级别(即用户可以缩小多少)。这就剥夺了用户的控制权，不推荐。
+3. `minimum-scale`: 设置最小缩放级别(即用户可以缩小多少)。这就剥夺了用户的控制权，不推荐。
 
-4. maximum-scale: 设置最大缩放级别(即用户可以放大多少)。同样，不建议这样做。
+4. `maximum-scale`: 设置最大缩放级别(即用户可以放大多少)。同样，不建议这样做。
 
-5. user-scalable: 当设置为 `no` 时，将阻止用户缩， 不推荐。
+5. `user-scalable`: 当设置为 `no` 时，将阻止用户缩， 不推荐。
 
-6. height: 应该设置布局 viewport 的高度。任何地方都不支持....所以不确定是否包括在内。
+6. `height`: 应该设置布局 viewport 的高度。任何地方都不支持....所以不确定是否包括在内。
 
 
 ## 参考文章

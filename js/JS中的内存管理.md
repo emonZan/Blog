@@ -129,8 +129,6 @@ function createPerson() {
 
 ## 参考文档
 
-[JavaScript's Memory Management Explained](https://felixgerschau.com/javascript-memory-management/#memory-life-cycle)
-
-[How JavaScript works: memory management + how to handle 4 common memory leaks](https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec)
-
-[Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
+- [JavaScript's Memory Management Explained](https://felixgerschau.com/javascript-memory-management/#memory-life-cycle)
+- [How JavaScript works: memory management + how to handle 4 common memory leaks](https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec)
+- [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
