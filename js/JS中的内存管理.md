@@ -96,13 +96,13 @@ emonObj.name; // emonObj 对象对 name value有显示引用
 
 内存泄漏是指：
 
-1. 计算机程序因为某些原因（对存储器配置配置管理失当，疏忽或者错误）造成程序没法是否已经不再使用的内存。
+1. 计算机程序因为某些原因（对存储器配置配置管理失当，疏忽或者错误）造成程序没法释放已经不再使用的内存。
 2. 配置给对象的存储器无法被执行程序所访问。
    内存泄漏不是指内存在物理上的消失，而是应用程序分配某段内存之后，由于设计失误，导致在是否该段内存之前就失去了对该段内存的控制，造成内存的浪费。
 
 我们这里会将 4 种常见的内存泄漏例子，你会发现，如果你理解了幕后发生的事情，这些都是可以轻易避免的。
 
-### 全局变量（Global variables）
+### 1. 全局变量（Global variables）
 
     把数据存储在全局变量中可能是最常见的内存泄漏。
     如果你用`var`关键字声明一个变量，直接定义一个`function`，或者直接忽略关键字的时候，浏览器引擎会自动把这个变量加到`window`对象里面。
@@ -122,10 +122,39 @@ function createPerson() {
 2. 在严格模式下运行代码来避免这种情况。
 3. 在创建全局变量之后，确保在不使用它的时候释放掉，可以把它设置为`null`。
 
-### 忘记的定时器或者callback方法
+### 2. 忘记的定时器或者callback方法
+这种情况特别是针对于单页面应用，因为你不会跳转到别的页面，也没有一些工具库比如说``
 #### 忘记的定时器
-特别是针对于单页面应用。如果你使用`setU`
+我们这里用`setInterval()`举例,下面这个`arr`参数一直不会被回收。直到`setInterval`方法被停止。
 
+```
+var arr = []; 
+var intervalForPush = setInterval(() => {
+    arr.push(1);
+    console.log(arr); 
+}, 1000);
+
+// 除非清掉intervalForPush,否则arr一直存在
+clearInterval(intervalForPush);
+```
+#### 忘记的callback方法
+```
+var btnElement = document.getElementById('submit-button');
+var counter = 0;
+function onClick(event) {
+   counter++;
+   btnElement.innerHtml = counter;
+}
+btnElement.addEventListener('click', onClick);
+
+// 回收节点和click事件
+element.removeEventListener('click', onClick);
+element.parentNode.removeChild(btnElement);
+```
+对于现代浏览器，我们不需要手动去调用`removeEventListener()`方法。因为当这个节点变得不可访问的时候，垃圾回收器会自动帮我们检测并回收。
+
+### 3. 闭包
+我们知道闭包的一个好处就是可以让作用域避免被回收掉。但同时，它是一把双刃剑，也可能导致内存泄漏。
 
 ## 参考文档
 
