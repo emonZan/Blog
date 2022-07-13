@@ -37,7 +37,6 @@ module.exports = {
             ],
             '/framework/Angular/': [
                 buildSidebar('Framework', [
-                    'kamra遇到chrome升级的问题',
                     'JS实现Angular的slider组件'
                 ])
             ],
@@ -49,6 +48,7 @@ module.exports = {
             ],
             '/others/': [
                 buildSidebar('Others', [
+                    'kamra遇到chrome升级的问题',
                     '开发实用工具',
                     'git常用命令总结'
                 ])
