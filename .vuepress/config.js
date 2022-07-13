@@ -35,7 +35,7 @@ module.exports = {
                     'JS中的内存管理'
                 ])
             ],
-            '/framework/': [
+            '/framework/Angular/': [
                 buildSidebar('Framework', [
                     'kamra遇到chrome升级的问题',
                     'JS实现Angular的slider组件'
