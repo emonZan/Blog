@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>call apply bind function</title>
-  </head>
-  <body>
-    <button id="call-button">call Fun</button>
-    <button id="apply-button">apply Fun</button>
-    <button id="bind-button">bind Fun</button>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>call apply bind function</title>
+</head>
+
+<body>
+  <button id="call-button">call Fun</button>
+  <button id="apply-button">apply Fun</button>
+  <button id="bind-button">bind Fun</button>
+</body>
+
 </html>
 <script>
   const name = "Jerry";
@@ -35,7 +38,7 @@
     "click",
     introduce.bind(me, "bind function", "sleeping") // bind方法本身就return一个绑定好this的方法
   );
-  
+
   //  call function
   function callIntroduce() {
     introduce.call(me, "call function", "sleeping");
