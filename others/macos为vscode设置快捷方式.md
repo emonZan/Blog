@@ -15,7 +15,7 @@ visuall Studio Code是开发中常用的代码编辑工具，但是在mac上面�
 ![vs-shell-command](../assets/images/vs-shell-command.png)
 
 3. 输入代码`/usr/local/bin/code "$*"`, 按`cmd+s`保存。名字可以自定义，我输入的是“Open with VSCode”.
-4. 系统偏好设置里面把Open with VSCode加一下。之后右键文件夹，就可以直接从VS Code里打开啦。
+4. 系统偏好设置里面把Open with VSCode加一下。之后右键文件夹，就可以直接从VS Code里打开了。
       ![quick-action-add](../assets/images/quick-action-add.png)
 
    ![quick-action-setting](../assets/images/quick-action-setting.png)
